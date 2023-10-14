@@ -12,6 +12,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import { AntDesign } from "@expo/vector-icons"; // black home
 import { Entypo } from "@expo/vector-icons"; //white home
 import { Ionicons } from "@expo/vector-icons"; // black notifi
+import SearchScreen from "./screens/SearchScreen";
 
 const StackNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -94,6 +95,7 @@ const StackNavigator = () => {
           component={BottomTabs}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="Search" component={SearchScreen} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
