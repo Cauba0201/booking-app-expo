@@ -11,12 +11,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 // icon
 import { AntDesign } from "@expo/vector-icons"; // black home
 import { Entypo } from "@expo/vector-icons"; //white home
-// import { AntDesign } from "@expo/vector-icons"; // black heart
-// import { AntDesign } from "@expo/vector-icons"; // white heart
 import { Ionicons } from "@expo/vector-icons"; // black notifi
-// import { Ionicons } from "@expo/vector-icons"; // white notifi
-// import { Ionicons } from "@expo/vector-icons"; // dark person
-// import { Ionicons } from "@expo/vector-icons"; // white person
 
 const StackNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -94,7 +89,11 @@ const StackNavigator = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Main" component={BottomTabs} options={{headerShown: false}}/>
+        <Stack.Screen
+          name="Main"
+          component={BottomTabs}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

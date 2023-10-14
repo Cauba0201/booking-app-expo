@@ -27,7 +27,7 @@ const Header = () => {
           padding: 8,
         }}
       >
-        <Ionicons name="bed" size={24} color="white" />
+        <Ionicons name="bed" size={20} color="white" />
         <Text
           style={{
             marginLeft: 8,
@@ -67,7 +67,7 @@ const Header = () => {
          
         }}
       >
-        <FontAwesome name="car" size={24} color="white" />
+        <FontAwesome name="car" size={20} color="white" />
         <Text
           style={{
             marginLeft: 8,
@@ -87,7 +87,7 @@ const Header = () => {
           
         }}
       >
-        <FontAwesome name="taxi" size={24} color="white" />
+        <FontAwesome name="taxi" size={20} color="white" />
         <Text
           style={{
             marginLeft: 8,
