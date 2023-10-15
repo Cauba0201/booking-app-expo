@@ -95,7 +95,11 @@ const StackNavigator = () => {
           component={BottomTabs}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Search" component={SearchScreen} options={{headerShown: false}}/>
+        <Stack.Screen
+          name="Search"
+          component={SearchScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

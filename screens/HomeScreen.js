@@ -8,7 +8,7 @@ import {
   Button,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
@@ -25,7 +25,8 @@ import {
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const [selectDates, setSelectDate] = useState();
+  const route = useRoute();
+  const [selectDate, setSelectDate] = useState();
   const [room, setRoom] = useState(1);
   const [adult, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
@@ -67,6 +68,7 @@ const HomeScreen = () => {
       />
     );
   };
+  console.log(route.params);
 
   return (
     <>
@@ -83,6 +85,7 @@ const HomeScreen = () => {
           >
             {/* //destination */}
             <Pressable
+              onPress={() => navigation.navigate("Search")}
               style={{
                 flexDirection: "row",
                 alignItems: "center",
@@ -96,7 +99,9 @@ const HomeScreen = () => {
               <AntDesign name="search1" size={24} color="black" />
               <TextInput
                 placeholderTextColor="black"
-                placeholder="Search ..."
+                placeholder={
+                  route?.params ? route.params.input : "Enter Your Destination"
+                }
               />
             </Pressable>
             {/* // Select day */}
@@ -171,7 +176,6 @@ const HomeScreen = () => {
               style={{
                 paddingHorizontal: 10,
                 borderBottomColor: "#FFC72C",
-                // borderBottomWidth: 1,
                 paddingVertical: 15,
                 backgroundColor: "#2a52be",
               }}
