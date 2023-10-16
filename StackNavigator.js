@@ -8,11 +8,12 @@ import HomeScreen from "./screens/HomeScreen";
 import BookingScreen from "./screens/BookingScreen";
 import SavedScreen from "./screens/SavedScreen";
 import ProfileScreen from "./screens/ProfileScreen";
+import SearchScreen from "./screens/SearchScreen";
+import PlaceScreen from "./screens/PlaceScreen";
 // icon
 import { AntDesign } from "@expo/vector-icons"; // black home
 import { Entypo } from "@expo/vector-icons"; //white home
 import { Ionicons } from "@expo/vector-icons"; // black notifi
-import SearchScreen from "./screens/SearchScreen";
 
 const StackNavigator = () => {
   const Tab = createBottomTabNavigator();
@@ -100,6 +101,7 @@ const StackNavigator = () => {
           component={SearchScreen}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="Place" component={PlaceScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

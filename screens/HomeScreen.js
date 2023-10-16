@@ -6,6 +6,7 @@ import {
   Pressable,
   TextInput,
   Button,
+  Alert,
 } from "react-native";
 import React, { useLayoutEffect, useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
@@ -22,6 +23,7 @@ import {
   SlideAnimation,
   ModalContent,
 } from "react-native-modals";
+import SearchScreen from "./SearchScreen";
 
 const HomeScreen = () => {
   const navigation = useNavigation();
@@ -69,6 +71,29 @@ const HomeScreen = () => {
     );
   };
   console.log(route.params);
+
+  const searchPlaces = (place)=>{
+    if(!route.params || !selectDate){
+      Alert.alert('Invalid Details', 'Please enter all the details', [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ]);
+  
+    }
+    if(route.params && selectDate){
+      navigation.navigate("Place",{
+        room: room,
+        adult: adult,
+        children: children,
+        selectDate: selectDate,
+        place: place,
+      })
+    }
+  }
 
   return (
     <>
@@ -173,6 +198,7 @@ const HomeScreen = () => {
             </Pressable>
             {/* //search buttom */}
             <Pressable
+            onPress={() => searchPlaces(route?.params.input)}
               style={{
                 paddingHorizontal: 10,
                 borderBottomColor: "#FFC72C",
